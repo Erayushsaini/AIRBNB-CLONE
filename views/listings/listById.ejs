@@ -1,0 +1,20 @@
+<%layout("layouts/boilerplate.ejs")%>
+<body>
+    <h2>listing of id = <%=data.id%></h2>
+
+    <ul>
+        <li><img src="<%=data.image%>" alt="image"></li>
+        <li><%=data.title%></li>
+        <li><%=data.description%></li>
+        <li>&#8377; <%=data.price.toLocaleString("en-IN")%></li>
+        <li><%=data.location%></li>
+        <li><%=data.country%></li>
+        
+    </ul>
+    <form action="/listings/<%=data.id%>/edit" method="get">
+        <button>edit</button>
+    </form>
+    <form action="/listings/<%=data.id%>/?_method=DELETE" method="post">
+        <button>delete</button>
+    </form>
+</body>

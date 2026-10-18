@@ -1,0 +1,11 @@
+<%layout("layouts/boilerplate.ejs")%>
+    <h1>All listings</h1>
+    <form action="/listings/new" method="get">
+        <button>new listing</button>
+    </form>
+    <ul>
+    <%for(let val of data) {%>
+        <li><a href="http://localhost:3030/listings/<%=val.id%>"><%=val.title%></a></li>
+    <%}%>
+    </ul>
+</body>
