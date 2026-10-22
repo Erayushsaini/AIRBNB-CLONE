@@ -15,7 +15,7 @@ app.engine("ejs",ejsMate);
 
 app.set("view engine" ,"ejs");
 app.set("views",path.join(__dirname,"views"));
-app.set(express.static(path.join(__dirname,"public")))
+app.use(express.static(path.join(__dirname,"public")))
 
 let methodOverride=require("method-override");
 app.use(methodOverride("_method"));
@@ -43,8 +43,7 @@ async function main() {
 main();
 
 app.get("/" ,(req,res) => {
-    res.send("this is the home route");
-    console.log("this is home route ");
+    res.render("listings/home.ejs");
 })
 
 

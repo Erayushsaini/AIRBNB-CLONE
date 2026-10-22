@@ -108,7 +108,7 @@ const Listings = {
             [id]
         );
 
-        return listing;
+        return result;
     }
 };
 

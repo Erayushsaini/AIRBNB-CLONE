@@ -1,0 +1,204 @@
+* {
+    
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color: black;
+}
+
+body {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.container {
+    flex: 1 0 auto;
+    width: 100%;
+    margin: 0;
+}
+
+
+/* navbar */
+
+nav.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1030; 
+    background-color: white;
+}
+
+.navbar-toggler {
+    border: none !important; 
+    border-radius: 8px !important;        
+    padding: 1rem 1rem !important;         
+    outline: none !important ;             
+    box-shadow: none !important; 
+    transition: all 0.3s ease !important;
+}
+
+.navbar-toggler:hover {
+    background-color:none !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 56, 92, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+    width: 1.5rem !important;  
+    height: 1.5rem !important;
+}
+
+.navbar-brand img {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+
+
+/* all listing page  */
+
+
+.listing-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-evenly;
+}
+.listings-tag {
+    text-decoration: none;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 12rem;
+}
+
+.listings-image {
+    width: 100%;
+}
+
+.card {
+    width: 18rem !important;
+    height: 22rem !important;
+    padding: 0.1rem 0.1rem;
+    margin:1.5rem 0rem !important ;
+
+    transition: 0.4s ease;
+}
+
+.card:hover {
+    transform:scale(1.01);
+}
+
+/* footer */
+
+
+.footer {
+    bottom: 0;
+    height: 8rem;
+    z-index: 1010;
+    border-top:1px solid #47444471 ;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 1rem 1rem;
+}
+
+.footer .links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+
+.footer .about {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.links-social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+}
+
+.links-social i {
+    opacity: 0.7;
+    transition: ease-in-out 0.5s;
+}
+
+.links-social i:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.about a {
+    opacity: 0.8;
+    text-decoration: none;
+    color:#FF385C;
+}
+
+.about a:hover {
+    opacity: 1;
+}
+
+
+
+
+ /* by the id   */
+
+
+
+.card-id {
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    margin: 2rem 2rem;
+    position: relative;
+    left: 10rem;
+    padding: 1rem 1rem;
+    gap: 2rem;
+ }
+
+
+.card-id button {
+    background-color: #FF385C;
+    border: none;
+    transition: 0.2s ease-in;
+    margin: 1rem 0rem;
+
+}
+.card-id button:hover {
+    background-color: #FF385C;
+    transform: translateY(-1px);
+}
+
+.card-id-top {
+    display: flex;
+    gap: 5rem;
+ }
+
+.card-id img {
+    width: 20rem;
+    height: auto;
+    border-radius: 1rem;
+ }
+
+ .card-id .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+ }
+
+
+
+
+ /* new */
+
+ /* edit */

@@ -1,11 +1,24 @@
-<%layout("layouts/boilerplate.ejs")%>
+<% layout("/layouts/boilerplate.ejs") %>
     <h1>All listings</h1>
-    <form action="/listings/new" method="get">
-        <button>new listing</button>
-    </form>
-    <ul>
-    <%for(let val of data) {%>
-        <li><a href="http://localhost:3030/listings/<%=val.id%>"><%=val.title%></a></li>
-    <%}%>
-    </ul>
-</body>
+
+<div class="listing-container">
+<%for(let val of data) {%>
+    <a href="http://localhost:3030/listings/<%=val.id%>" class="listings-tag">
+        <div class="card" >
+            <div class="listings-image"><img src="<%=val.image%>" class="card-img-top" alt="image"></div>
+            <div class="card-body">
+                <p class="card-text">
+                    <%=val.title%> 
+                    <br>
+                    &#8377; <%=Number(val.price).toLocaleString("en-IN")%>
+                    <br>
+                    <%=val.location%>
+                </p>
+            </div>
+        </div>
+    </a>
+<%}%>
+</div>
+    
+   
+

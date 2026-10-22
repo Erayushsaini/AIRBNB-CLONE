@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home | Find your next stay</title>
+  <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="/" class="logo">airbnb</a>
+
+    <nav class="nav-links">
+      <a href="/listings">All listings</a>
+      <a href="/listings/new">Airbnb your home</a>
+      <a href="/signup" class="btn-outline">Sign up</a>
+      <a href="/login" class="btn-solid">Log in</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Find your next stay</h1>
+      <p>Search beach houses, cabins, villas and more</p>
+
+      <!-- Sends the user to your listings page with ?search=... -->
+      <form action="/listings" method="GET" class="hero-search">
+        <input type="text" name="search" placeholder="Search destinations, e.g. Goa" autocomplete="off">
+        <button type="submit">Search</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+  <section class="section">
+    <h2>Explore by category</h2>
+    <div class="categories">
+      <a href="/listings?category=beach" class="category"><span>🏖️</span>Beachfront</a>
+      <a href="/listings?category=cabin" class="category"><span>🛖</span>Cabins</a>
+      <a href="/listings?category=trending" class="category"><span>🔥</span>Trending</a>
+      <a href="/listings?category=pool" class="category"><span>🏊</span>Amazing pools</a>
+      <a href="/listings?category=mountain" class="category"><span>⛰️</span>Mountains</a>
+      <a href="/listings?category=city" class="category"><span>🏙️</span>Iconic cities</a>
+      <a href="/listings?category=farm" class="category"><span>🌾</span>Farms</a>
+      <a href="/listings?category=lake" class="category"><span>🛶</span>Lakefront</a>
+    </div>
+  </section>
+
+  <!-- FEATURED STAYS -->
+  <section class="section">
+    <div class="section-head">
+      <h2>Featured stays</h2>
+      <a href="/listings" class="see-all">See all &rarr;</a>
+    </div>
+
+    <% if (typeof featured !== "undefined" && featured.length > 0) { %>
+      <div class="grid">
+        <% for (let listing of featured) { %>
+          <%
+            // Works whether image is a string or an object like { url: "..." }
+            let img = "https://picsum.photos/seed/" + listing._id + "/600/600";
+            if (listing.image) {
+              img = (typeof listing.image === "string") ? listing.image : (listing.image.url || img);
+            }
+          %>
+          <a href="/listings/<%= listing._id %>" class="card">
+            <div class="card-img">
+              <img src="<%= img %>" alt="<%= listing.title %>" loading="lazy">
+            </div>
+            <div class="card-info">
+              <h3><%= listing.title %></h3>
+              <p class="muted"><%= listing.location %><%= listing.country ? ", " + listing.country : "" %></p>
+              <p class="price"><strong>&#8377;<%= Number(listing.price).toLocaleString("en-IN") %></strong> / night</p>
+            </div>
+          </a>
+        <% } %>
+      </div>
+    <% } else { %>
+      <p class="muted">No featured stays yet. <a href="/listings/new">Add the first listing</a>.</p>
+    <% } %>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section why">
+    <div class="why-item">
+      <span>🔒</span>
+      <h3>Secure booking</h3>
+      <p>Your stay is confirmed safely, every time.</p>
+    </div>
+    <div class="why-item">
+      <span>🏡</span>
+      <h3>Unique places</h3>
+      <p>From city lofts to quiet mountain cabins.</p>
+    </div>
+    <div class="why-item">
+      <span>💬</span>
+      <h3>24/7 support</h3>
+      <p>Help is always a message away.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2026 Airbnb Clone &middot; Built for practice</p>
+  </footer>
+
+</body>
+</html>

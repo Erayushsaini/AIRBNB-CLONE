@@ -1,20 +1,26 @@
 <%layout("layouts/boilerplate.ejs")%>
-<body>
-    <h2>listing of id = <%=data.id%></h2>
 
-    <ul>
-        <li><img src="<%=data.image%>" alt="image"></li>
-        <li><%=data.title%></li>
-        <li><%=data.description%></li>
-        <li>&#8377; <%=data.price.toLocaleString("en-IN")%></li>
-        <li><%=data.location%></li>
-        <li><%=data.country%></li>
-        
-    </ul>
+<div class="card-id">
+  <div class="card-id-top">
+    <img src="<%=data.image%>" class="card-img-top" alt="image">
+    <div>
     <form action="/listings/<%=data.id%>/edit" method="get">
-        <button>edit</button>
+        <button type="submit" class="btn btn-primary">EDIT</button>
     </form>
     <form action="/listings/<%=data.id%>/?_method=DELETE" method="post">
-        <button>delete</button>
+        <button type="submit" class="btn btn-primary">DELETE</button>
     </form>
-</body>
+    </div>
+    </div>  
+  <div class="card-body">
+    <h5 class="card-title"><%=data.title%></h5>
+    <p class="card-text"><%=data.description%></p>
+    <p class="card-text">&#8377; <%=Number(data.price).toLocaleString("en-IN")%></p>
+    <p class="card-text"><%=data.location%></p>
+    <p class="card-text"><%=data.country%></p>
+  </div>
+  
+</div>
+
+
+
