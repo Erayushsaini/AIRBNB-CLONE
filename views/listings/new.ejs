@@ -1,13 +1,26 @@
 <%layout("layouts/boilerplate.ejs")%>
-    <form action="/listings" method="post">
-        <input name="listing[title]" type="text" placeholder="title">
-        <input name="listing[image]" type="text" placeholder="image link">
-        <textarea name="listing[description]" placeholder="description"></textarea>
-        <input name="listing[price]"  type="text" placeholder="price">
-        <input name="listing[location]" type="text" placeholder="location">
-        <input name="listing[country]" type="text" placeholder="country">
 
-        <button>submit</button>
+    <h2>New Listing</h2>
+    <div class="box">
+    <form action="/listings" method="post" class="form-container">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" class="form-control" type="text" id="title" placeholder="title">
+        <label for="image" class="form-label">image link</label>
+        <input name="listing[image]"   class="form-control" type="text" id="image"   placeholder="image link">
+        <label for="description" class="form-label">Discription</label>
+        <textarea name="listing[description]" id="description" class="form-control" placeholder="enter details about the location"></textarea>
+        <label for="price" class="form-label">Price</label>
+        <input name="listing[price]"   class="form-control" type="text" id="title"  placeholder="pricing" >
+
+        <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" type="text" class="form-control" id="location" placeholder="location " >
+
+        <label for="country" class="form-label">country</label>
+        <input name="listing[country]" class="form-control" id="country" type="text" placeholder="country">
+        <button class="btn btn-primary"> submit</button>
+    </div>  
+
     </form>
+    </div>
     
-</body>

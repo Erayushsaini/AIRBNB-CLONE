@@ -79,7 +79,6 @@ app.post("/listings", async (req,res) => {
 app.get("/listings/:id/edit" ,async (req,res) => {
     let {id}=req.params;
     let listing=await Listings.findbyId(id);
-    console.log("edit route");
     res.render("listings/edit.ejs",{listing});
 })
 

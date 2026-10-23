@@ -17,6 +17,15 @@ body {
 }
 
 
+
+.box {
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 /* navbar */
 
 nav.navbar {
@@ -154,16 +163,18 @@ nav.navbar {
 
 
 .card-id {
-    width: 40rem;
+    width: 100%;
+    max-width: 40rem;
+    min-width: 30rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
     margin: 2rem 2rem;
-    position: relative;
-    left: 10rem;
     padding: 1rem 1rem;
     gap: 2rem;
+    border: 1px solid #2222226a;
+    border-radius: 1rem;
  }
 
 
@@ -202,3 +213,28 @@ nav.navbar {
  /* new */
 
  /* edit */
+
+ form label {
+    margin-top: 1rem;
+    font-weight: 500;
+ }
+
+ form button {
+    background-color: #FF385C !important;
+    border: none !important;
+    margin-top: 1rem;
+ }
+
+
+ .form-container {
+    width: 100%;
+    min-width: 30rem;
+    max-width: 50rem;
+    padding: 1rem 1rem;
+    border: 1px solid #19181856;
+    border-radius: 1rem;
+    margin: 2rem 1rem;
+
+ }
+
+
